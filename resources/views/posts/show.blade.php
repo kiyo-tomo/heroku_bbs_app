@@ -15,6 +15,7 @@
 
         <form style="display: inline-block;" method="POST" action="{{ route('posts.destroy', ['post' => $post]) }}">
             {{ csrf_field() }}
+            <!-- @method('DELETE') -->
             <input type="hidden" name="_method" value="DELETE">
 
             <input type="submit" value="削除" class="btn btn-danger" onclick='return confirm("本当に投稿を削除しますか？");'>
@@ -33,8 +34,6 @@
         <p class="mb-5">
             {!! nl2br(e($post->body)) !!}
         </p>
-
-        @endif
 
         <!-- Post Comment -->
         <form class="mb-4" method="POST" action="{{ route('comments.store') }}">
