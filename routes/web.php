@@ -11,15 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// // Top
-// Route::get('/home', function(){
-// 	return view('home');
-// });
-
 // Regist User 
 Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('auth/register', 'Auth\RegisterController@register');
@@ -39,7 +30,3 @@ Route::resource('comments', 'CommentsController', ['only' => ['store']]);
 Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/upload', 'HomeController@upload');
-

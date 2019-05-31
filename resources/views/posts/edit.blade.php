@@ -10,10 +10,9 @@
         </h1>
 
         <form method="POST" action="{{ route('posts.update', ['post' => $post]) }}">
-            @csrf
+            {{ csrf_field() }}
             @method('PUT')
             <input type="hidden" name="user_name" value="{{\Auth::user()->name}}">
-            <!-- <input type="hidden" name="user_id" value="{{\Auth::user()->id}}"> -->
             <fieldset class="mb-4">
                 <div class="form-group">
                     <label for="title">

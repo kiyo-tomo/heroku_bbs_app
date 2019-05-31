@@ -4,11 +4,6 @@
 
 @if (Auth::check())
 
-<!-- <div class="mb-4" align="right">
-    "{{\Auth::user()->name}}"さんとしてログインしています<br />
-    <a href="/auth/logout" class="btn btn-secondory">Logout</a>
-</div> -->
-
 <div class="container mt-4">
     <div class="border p-4">
         <h1 class="h5 mb-4">
@@ -16,7 +11,7 @@
         </h1>
 
         <form method="POST" action="{{ route('posts.store') }}">
-            @csrf
+        {{ csrf_field() }}
             <input type="hidden" name="user_name" value="{{\Auth::user()->name}}">
             <input type="hidden" name="user_id" value="{{\Auth::user()->id}}">
             <fieldset class="mb-4">
@@ -45,9 +40,6 @@
                     @endif
 
                     <br />
-                    <!-- <div class="form-image_url">
-                        <input type="file" name="image_url">
-                    </div> -->
                 </div>
 
                 <div class="mt-5">

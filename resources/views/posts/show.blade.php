@@ -14,8 +14,9 @@
         </a>
 
         <form style="display: inline-block;" method="POST" action="{{ route('posts.destroy', ['post' => $post]) }}">
-            @csrf
-            @method('DELETE')
+            {{ csrf_field() }}
+            <!-- @method('DELETE') -->
+            <input type="hidden" name="_method" value="DELETE">
 
             <input type="submit" value="削除" class="btn btn-danger" onclick='return confirm("本当に投稿を削除しますか？");'>
 

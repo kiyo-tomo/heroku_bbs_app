@@ -28,14 +28,6 @@ class PostsController extends Controller
             'body' => 'required|max:2000',
             'user_name' => 'required|max:50',
             'user_id' => 'required|exists:users,id',
-            'image_url' => [
-                // アップロードされたファイルであること
-                'file',
-                // 画像ファイルであること
-                'image',
-                // MIMEタイプを指定
-                'mimes:jpeg,png',
-            ]
         ]);
 
         // Postモデルのインスタンスを作成する
@@ -47,9 +39,6 @@ class PostsController extends Controller
         //登録ユーザーからidを取得
         $post->user_id = Auth::user()->id;
         $post->user_name = $request->user_name;
-
-        // $path = "app/" . $request->file('image_url')->store('/home/vagrant/code/sampleapp/public');
-        // $post->image_url = basename($path);
 
         // インスタンスの状態をデータベースに書き込む
         $post->save();

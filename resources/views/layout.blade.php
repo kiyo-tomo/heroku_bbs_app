@@ -22,12 +22,6 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
                 <ul class="navbar-nav mr-auto">　
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">About</a>
-                    </li> -->
                 </ul>
 
                 <ul class="navbar-nav">
@@ -41,19 +35,10 @@
                             {{\Auth::user()->name}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!-- <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a> -->
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/auth/logout">Logout</a>
                         </div>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/auth/register">Register</a>
-                    </li> -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/auth/login">Login</a>
-                    </li> -->
-
                 </ul>
 
             </div>

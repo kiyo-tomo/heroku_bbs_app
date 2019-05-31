@@ -39,9 +39,6 @@
             </span>
             @endif
 
-            <!-- <span class="badge badge-primary">
-                投稿者名 {{$post->name}}
-            </span> -->
         </div>
     </div>
     @endforeach
@@ -93,10 +90,6 @@
                 コメント {{ $post->comments->count() }}件
             </span>
             @endif
-
-            <!-- <span class="badge badge-primary">
-                投稿者名 {{$post->name}}
-            </span> -->
         </div>
     </div>
     @endforeach
@@ -106,11 +99,6 @@
     {{ $posts->links() }}
 </div>
 
-<!-- <div align="center">
-    <h1 class="h3 mb-3 font-weight-normal">Hello! ゲストさん</h1>
-    <a href="/auth/login" class="btn btn-secondory">Login</a><br />
-    <a href="/auth/register" class="btn btn-secondory">会員登録</a>
-</div> -->
 @endif
 
 @endsection
