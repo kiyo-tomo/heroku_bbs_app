@@ -15,7 +15,6 @@
 
         <form style="display: inline-block;" method="POST" action="{{ route('posts.destroy', ['post' => $post]) }}">
             {{ csrf_field() }}
-            <!-- @method('DELETE') -->
             <input type="hidden" name="_method" value="DELETE">
 
             <input type="submit" value="削除" class="btn btn-danger" onclick='return confirm("本当に投稿を削除しますか？");'>
@@ -35,14 +34,11 @@
             {!! nl2br(e($post->body)) !!}
         </p>
 
-        @if ($post->image_url)
-        <p>画像：<img src="/storage/post_images/{{ $post->image_url }}"></p>
-        {{ $post->image_url }}
         @endif
 
         <!-- Post Comment -->
         <form class="mb-4" method="POST" action="{{ route('comments.store') }}">
-            @csrf
+            {{ csrf_field() }}
 
             <input name="post_id" type="hidden" value="{{ $post->id }}">
             <input type="hidden" name="name" value="{{\Auth::user()->name}}">
